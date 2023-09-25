@@ -38,36 +38,36 @@ class Cell:
     """
 
 
-counter = 0
+    counter = 0
 
 
-def __init__(self, leftEnd: float, rightEnd: float):
-    """Initializes the Cell class
+    def __init__(self, leftEnd: float, rightEnd: float):
+        """Initializes the Cell class
 
-    Parameters
-    ----------
-    leftEnd: float
-      The left end of the cell
-    rightEnd: float
-      The right end of the cell
-    """
+        Parameters
+        ----------
+        leftEnd: float
+          The left end of the cell
+        rightEnd: float
+          The right end of the cell
+        """
 
-    self._cellID = Cell.counter
-    Cell.counter += 1
-    self.cellAverage = 0.
-    self.nextAverage = 0.
-    self.previousCell = None
-    self.nextCell = None
-#
-    self.leftEnd = leftEnd
-    self.rightEnd = rightEnd
-    self.center = self.leftEnd + (self.rightEnd - self.leftEnd)/2.
+        self._cellID = Cell.counter
+        Cell.counter += 1
+        self.cellAverage = 0.
+        self.nextAverage = 0.
+        self.previousCell = None
+        self.nextCell = None
+    #
+        self.leftEnd = leftEnd
+        self.rightEnd = rightEnd
+        self.center = self.leftEnd + (self.rightEnd - self.leftEnd)/2.
 
 
-def swapAverageNextAverage(self) -> None:
-    """Swaps the cellAverage and nextAverage attributes"""
+    def swapAverageNextAverage(self) -> None:
+        """Swaps the cellAverage and nextAverage attributes"""
 
-    logging.debug("Swapping cellAverage and nextAverage")
+        logging.debug("Swapping cellAverage and nextAverage")
 
-    self.cellAverage = self.nextAverage
-    self.nextAverage = 0.
+        self.cellAverage = self.nextAverage
+        self.nextAverage = 0.
