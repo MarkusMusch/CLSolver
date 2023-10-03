@@ -15,23 +15,19 @@ def linearAdvection(u: np.array, capacity: float=1.) -> np.array:
 
 def monotoneQuadratic(u: np.array, capacity: float=1.) -> np.array:
     """ This function returns the value of the monotone quadratic flux"""
-    flux = np.where(u > 0, u*u/(2.*capacity), 0.)
-    return flux
+    return np.where(u > 0, u*u/(2.*capacity), 0.)
 
 def positiveBurgers(u: np.array, capacity: float=1.) -> np.array:
     """ This function returns the value of the positive Burgers flux"""
-    flux = np.where(u > 0, u*u/(2.*capacity), 0.)
-    return flux
+    return np.where(u > 0, u*u/(2.*capacity), 0.)
 
 def trafficFlow(u: np.array, capacity: float=1.) -> np.array:
     """ This function returns the value of the traffic flow flux"""
-    flux = np.where(u > 0, u*(1.-u/capacity), 0.)
-    return flux
+    return np.where(u > 0, u*(1.-u/capacity), 0.)
 
 def holdenRisebroFlow(u: np.array, capacity: float=1.) -> np.array:
     """ This function returns the value of the Holden-Risebro flow flux"""
-    flux = np.where(u > 0, 4*u*(1.-u/capacity), 0.)
-    return flux
+    return np.where(u > 0, 4*u*(1.-u/capacity), 0.)
 
 # Define the numerical fluxes here  
 

@@ -25,11 +25,17 @@ x = np.linspace(leftBoundary, rightBoundary, numCells+1)
 
 u = np.vectorize(initial_data)(x)
 u[0] = u[-1]
+plt.plot(x, u , label="Initial")
+plt.savefig("./images/initial_data_traffic_flow.png")
+plt.show()
+
 l1_error, u = solve(u, x, endTime, dt, dx, numCells, exact_solution, trafficFlow, laxFriedrichs)
 
 plt.plot(l1_error)
+plt.savefig("./images/l1_error_traffic_flow.png")
 plt.show()
 
 plt.plot(x, u, label="Numerical")
 plt.plot(x, exact_solution(x, endTime), label="Exact")
+plt.savefig("./images/final_time_traffic_flow.png")
 plt.show()

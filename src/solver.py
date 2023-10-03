@@ -4,7 +4,9 @@ import numpy as np
 
 # Use vectorize to make sure that the function works on numpy arrays
 # even if the return value doesn't depend on the input
-def solve(u: np.ndarray, x: np.ndarray, endTime: float, dt: float, dx: float, numCells: int, exactSolution: callable, analytical_flux: callable, numerical_flux: callable) -> np.ndarray:
+def solve(u: np.ndarray, x: np.ndarray, endTime: float, dt: float, dx: float,
+          numCells: int, exactSolution: callable, analytical_flux: callable,
+          numerical_flux: callable) -> np.ndarray:
     u_new = np.zeros(numCells+1)
     l1_error = []
 
